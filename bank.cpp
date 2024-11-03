@@ -30,21 +30,26 @@ int main () {
 
     case 3: {
     int sacarValor;
-    std::cout << "Qual valor gostaria de sacar?" << '\n';
-    std::cin >> sacarValor;
-    int temp = montante - sacarValor;
-    if (temp < 0) {
-        std::cout << "Operacao invalida, saldo insuficiente para realizar a operacao.";
-        break;
-    }
-    montante -= sacarValor;
-    std::cout << "Seu montante atual e igual a: " << montante;
-    break;
+        std::cout << "Qual valor gostaria de sacar?" << '\n';
+        std::cin >> sacarValor;
+
+            if (sacarValor < 0) {
+                std::cout << "Valor invalido para saque." << '\n';
+                } else if (sacarValor > montante) {
+                    std::cout << "Operacao invalida, saldo insuficiente para realizar a operacao." << '\n';
+                } else {
+                    montante -= sacarValor;
+                    std::cout << "Seu montante atual e igual a: " << montante << '\n';
+                }
+                break;
     }
     
     case 4:
     std::cout << "Finalizando seu servico.";
     exit(0);
+
+    default:
+                std::cout << "Opcao invalida. Tente novamente." << '\n';
     }
     } while (choice != 0);
     
