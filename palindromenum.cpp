@@ -1,5 +1,5 @@
 #include <iostream>
-#include <string> // Incluímos a biblioteca para trabalhar com strings
+#include <string> 
 using namespace std;
 
 bool isPalindrome(const string &num);
@@ -12,7 +12,7 @@ int main() {
 
     cout << "O numero digitado foi: " << num << endl;
 
-    // Chamamos a função para verificar se é palíndromo
+
     (isPalindrome(num)) ? cout << "E um palindromo" << endl : cout << "Nao e um palindromo" << endl;
 
     return 0;
