@@ -9,7 +9,7 @@ int main() {
     cout << "Qual o numero do cartao que gostaria de checar?" <<endl;
     cin >> cardNumber;
     cout << cardNumber;
-    int cardNumberLength = strlen(cardNumber.c_str());
+    int cardNumberLength = cardNumber.length();
     if (cardNumberLength != 16) {
         cout << "Cartao invalido.";
         return 0;
@@ -24,10 +24,10 @@ bool cardValidator(const string &num, int strlength) {
 for (int i = strlength-2; i >= 0; i-=2) {
     int numberEven = (num[i] - '0') * 2;
     if (numberEven >= 10) {
-        sumEven += (numberEven % 10) + (numberEven % numberEven + 1);
+        sumEven += (numberEven % 10) + (numberEven / 10);
     } else sumEven+= numberEven;
 }
-    for (int i = 15; i >= 0; i-=2) {
+    for (int i = strlength-1; i >= 0; i-=2) {
         int numberOdd = (num[i] - '0');
         if (numberOdd >= 10) {
             sumOdd += (numberOdd % 10) + (numberOdd % numberOdd + 1);
