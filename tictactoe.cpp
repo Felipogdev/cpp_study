@@ -1,5 +1,5 @@
 #include <iostream>
-#include <time.h>
+
 using namespace std;
 
 void printBoard (char arr[][3]);
@@ -25,7 +25,7 @@ int main() {
          cout << "Jogador",(playerTurn) ? cout << " X " : cout << " O ";
          cout << "Digite a celula que gostaria de marcar: ";
          cin >> cell;
-         } while (cell < 1 || cell > 9 || board[(cell-1)/3][(cell-1)%3] != '.');
+         } while (cell < 1 || cell > 9 || board[(cell-1)/3][(cell-1)%3] != '.' || typeid(cell) == typeid(float));
          int cellX = (cell -1) / 3;
          int cellY = (cell -1) % 3;
          if (playerTurn == true) board[cellX][cellY] = 'X';
@@ -53,9 +53,9 @@ return 0;
 }
 
 void printBoard (char arr[3][3]) {
-    cout << "  0 1 2" << endl;
+    cout << "  1 2 3" << endl;
     for (int i = 0; i < 3; i++) {
-        cout << i << " ";
+        cout << i+1 << " ";
         for (int j = 0; j < 3; j++) {
             cout << arr[i][j] << " ";
         }
